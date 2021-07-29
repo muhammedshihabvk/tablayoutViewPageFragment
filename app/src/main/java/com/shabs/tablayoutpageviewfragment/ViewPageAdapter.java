@@ -6,8 +6,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.shabs.tablayoutpageviewfragment.fragments.MovieList;
-
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -22,7 +20,7 @@ public class ViewPageAdapter extends FragmentStateAdapter {
         super(fragmentManager, lifecycle);
     }
 
-    public  void setInitialValues(int pageCount,List<Fragment> fragmentList){
+    public void setInitialValues(int pageCount, List<Fragment> fragmentList) {
         this.pageCount = pageCount;
         this.fragmentList = fragmentList;
     }

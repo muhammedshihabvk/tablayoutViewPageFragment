@@ -22,13 +22,13 @@ class MainActivity : AppCompatActivity() {
         tablayout = findViewById(R.id.tabLayout)
         viewPager = findViewById(R.id.viewPager)
 
-        arraylist.add(MovieList.getInstance("shihab"))
-        arraylist.add(MovieList.getInstance("shuaib"))
-        arraylist.add(MovieList.getInstance("ramees"))
+        arraylist.add(MovieList.getInstance("Batman"))
+        arraylist.add(MovieList.getInstance("spiderman"))
+        arraylist.add(MovieList.getInstance("ironman"))
 
-        pageTitles.add("shihab")
-        pageTitles.add("shuaib")
-        pageTitles.add("ramees")
+        pageTitles.add("Batman")
+        pageTitles.add("spiderman")
+        pageTitles.add("ironman")
 
 
         var viewPageAdapter = ViewPageAdapter(supportFragmentManager, lifecycle)

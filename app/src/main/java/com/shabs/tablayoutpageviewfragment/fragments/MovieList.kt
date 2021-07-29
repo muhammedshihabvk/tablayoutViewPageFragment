@@ -51,7 +51,7 @@ class MovieList : Fragment() {
     }
 
     private fun setupViewModel() {
-        viewModel = ViewModelProvider(this, MainViewModelFactory(APIService.getApiService()))[MainViewModel::class.java]
+        viewModel = ViewModelProvider(this, MainViewModelFactory(APIService.getApiService(),movieName))[MainViewModel::class.java]
     }
 
     private fun setupList() {

@@ -13,7 +13,7 @@ interface APIService {
     @GET("/")
     suspend fun getListData(
         @Query("page") pageNumber: Int,
-        @Query("s") moviewName: String,
+        @Query("s") moviewName: String?,
         @Query("apikey") apiKey: String
     ): Response<APIResponse>
 

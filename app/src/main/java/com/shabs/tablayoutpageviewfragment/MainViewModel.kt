@@ -8,9 +8,9 @@ import androidx.paging.cachedIn
 import androidx.paging.liveData
 import com.shabs.tablayoutpageviewfragment.APIService
 
-class MainViewModel(private val apiService: APIService) : ViewModel(){
+class MainViewModel(private val apiService: APIService,private val moviewName :String?) : ViewModel(){
 
     val listData = Pager(PagingConfig(pageSize = 6)){
-        PostDataSource(apiService)
+        PostDataSource(apiService,moviewName)
     }.flow.cachedIn(viewModelScope)
 }

@@ -6,14 +6,14 @@ import androidx.paging.PagingState
 import com.shabs.pagepoc.models.Data
 import com.shabs.tablayoutpageviewfragment.APIService
 
-class PostDataSource(private val apiService: APIService) :
+class PostDataSource(private val apiService: APIService,private val movieName : String?) :
     PagingSource<Int, Data>() {
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Data> {
 
         try {
             val currentLoadingPageKey = params.key ?: 1
             val response = apiService.getListData(
-                currentLoadingPageKey, "BatMan", "132c797b"
+                currentLoadingPageKey, movieName, "132c797b"
             )
 
             val data = response.body()?.search ?: emptyList()
