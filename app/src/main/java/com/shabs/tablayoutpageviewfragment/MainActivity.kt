@@ -22,17 +22,18 @@ class MainActivity : AppCompatActivity() {
         tablayout = findViewById(R.id.tabLayout)
         viewPager = findViewById(R.id.viewPager)
 
-        arraylist.add(MovieList.getInstance("Batman"))
-        arraylist.add(MovieList.getInstance("spiderman"))
-        arraylist.add(MovieList.getInstance("ironman"))
-
         pageTitles.add("Batman")
         pageTitles.add("spiderman")
         pageTitles.add("ironman")
+        pageTitles.add("rock")
+
+        for(movie in pageTitles){
+            arraylist.add(MovieList.getInstance(movie))
+        }
 
 
         var viewPageAdapter = ViewPageAdapter(supportFragmentManager, lifecycle)
-        viewPageAdapter.setInitialValues(3, arraylist)
+        viewPageAdapter.setInitialValues(pageTitles.size, arraylist)
 
         viewPager.adapter = viewPageAdapter
         TabLayoutMediator(tablayout, viewPager, object : TabLayoutMediator.TabConfigurationStrategy {
